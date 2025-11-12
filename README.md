@@ -1,2 +1,5 @@
 # matematica_para_criancas
- um jogo de matematica para criancas
+
+ ##baixar o jogo
+ 
+ [download do jogo] (https://github.com/IkaroHM/matematica_para_criancas/blob/main/matematica-simples/matematica%20simples.apk)
