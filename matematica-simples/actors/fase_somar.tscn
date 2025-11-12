@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://csd746re01po7"]
+
+[ext_resource type="Script" uid="uid://nd88do5013k1" path="res://scripts/fase_somar.gd" id="1_3rknj"]
+[ext_resource type="FontFile" uid="uid://cq4nnr6asxhof" path="res://assets/MomoTrustDisplay-Regular.ttf" id="2_4o03k"]
+[ext_resource type="AudioStream" uid="uid://ds5nc41lqj4dq" path="res://assets/acerto.mp3" id="3_8jh4d"]
+[ext_resource type="AudioStream" uid="uid://b2x3s42qevwbc" path="res://assets/erro.mp3" id="4_2q68k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4gw0"]
+font = ExtResource("2_4o03k")
+font_size = 64
+
+[node name="fase_somar" type="Node2D"]
+script = ExtResource("1_3rknj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-9, 0)
+
+[node name="bg" type="ColorRect" parent="."]
+offset_left = -796.0
+offset_top = -470.0
+offset_right = 826.0
+offset_bottom = 400.0
+color = Color(0.19239978, 0.42007673, 1.0024314, 1)
+
+[node name="texto" type="Label" parent="."]
+offset_left = -45.0
+offset_top = -127.0
+offset_right = 45.0
+offset_bottom = -43.0
+label_settings = SubResource("LabelSettings_t4gw0")
+
+[node name="botao1" type="Button" parent="."]
+offset_left = 282.0
+offset_top = 26.0
+offset_right = 517.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("2_4o03k")
+theme_override_font_sizes/font_size = 24
+text = "teste"
+
+[node name="botao2" type="Button" parent="."]
+offset_left = -526.0
+offset_top = 24.0
+offset_right = -291.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("2_4o03k")
+theme_override_font_sizes/font_size = 24
+text = "teste"
+
+[node name="botao3" type="Button" parent="."]
+offset_left = -99.0
+offset_top = 22.0
+offset_right = 136.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("2_4o03k")
+theme_override_font_sizes/font_size = 24
+text = "teste"
+
+[node name="som_acerto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8jh4d")
+
+[node name="som_erro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2q68k")
+
+[node name="pontuacao" type="Label" parent="."]
+offset_left = -556.0
+offset_top = -310.0
+offset_right = -164.0
+offset_bottom = -102.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4o03k")
+theme_override_font_sizes/font_size = 32
+
+[connection signal="pressed" from="botao1" to="." method="_on_botao_pressed"]
+[connection signal="pressed" from="botao2" to="." method="_on_botao_pressed"]
+[connection signal="pressed" from="botao3" to="." method="_on_botao_pressed"]
